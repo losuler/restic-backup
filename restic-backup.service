@@ -21,4 +21,4 @@ ExecStart=/usr/bin/restic backup \
     /usr/local \
     /var
 ExecStartPost=/usr/bin/curl -m 10 --retry 5 \
-    https://hc-ping.com/$HEALTHCHECKS_BACKUP
+    https://hc-ping.com/$HEALTHCHECKS_BACKUP_UUID
