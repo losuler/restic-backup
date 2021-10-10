@@ -15,7 +15,7 @@ ExecStart=/usr/bin/restic forget \
     --keep-daily 7 \
     --keep-weekly 4 \
     --keep-monthly 6 \
-    --group-by paths && \
-    /usr/bin/restic check
+    --group-by paths
+ExecStart=/usr/bin/restic check
 ExecStartPost=/usr/bin/curl -m 10 --retry 5 \
     https://hc-ping.com/$HEALTHCHECKS_UUID
