@@ -8,7 +8,7 @@ Requires=local-fs.target network-online.target
 Type=oneshot
 Environment="RESTIC_CACHE_DIR=/var/cache/restic"
 EnvironmentFile=/etc/restic/restic.conf
-ExecStart=restic forget \
+ExecStart=/usr/bin/restic forget \
     --verbose \
     --prune \
     --tag systemd \
@@ -16,6 +16,6 @@ ExecStart=restic forget \
     --keep-weekly 4 \
     --keep-monthly 6 \
     --group-by paths && \
-    restic check
+    /usr/bin/restic check
 ExecStartPost=/usr/bin/curl -m 10 --retry 5 \
     https://hc-ping.com/$HEALTHCHECKS_UUID

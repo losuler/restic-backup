@@ -8,7 +8,7 @@ Requires=local-fs.target network-online.target
 Type=oneshot
 Environment="RESTIC_CACHE_DIR=/var/cache/restic"
 EnvironmentFile=/etc/restic/restic.conf
-ExecStart=restic backup \
+ExecStart=/usr/bin/restic backup \
     --verbose \
     --one-file-system \
     --tag systemd \
