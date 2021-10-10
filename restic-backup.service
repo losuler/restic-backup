@@ -16,6 +16,7 @@ ExecStart=/usr/bin/restic backup \
     --exclude-file /etc/restic/excludes \
     /etc \
     /home \
+    /opt \
     /root \
     /usr/local \
     /var
