@@ -29,6 +29,6 @@ ExecStart=/usr/bin/bash -c "mysqldump \
     --verbose \
     --tag systemd \
     --stdin \
-    --stdin-filename $DB_NAME.sql
+    --stdin-filename $DB_NAME.sql"
 ExecStartPost=/usr/bin/curl -m 10 --retry 5 \
     https://hc-ping.com/$HEALTHCHECKS_BACKUP_UUID
