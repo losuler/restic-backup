@@ -22,13 +22,13 @@ ExecStart=/usr/bin/restic backup \
     /var
 ExecStart=/bin/bash -c "/usr/bin/mysqldump \
     --single-transaction \
-    -u $DB_USERNAME \
-    -p$DB_PASSWORD \
-    $DB_NAME | \
+    -u ${DB_USERNAME} \
+    -p${DB_PASSWORD} \
+    ${DB_NAME} | \
     /usr/bin/restic backup \
     --verbose \
     --tag systemd \
     --stdin \
-    --stdin-filename $DB_NAME.sql"
+    --stdin-filename ${DB_NAME}.sql"
 ExecStartPost=/usr/bin/curl -m 10 --retry 5 \
-    https://hc-ping.com/$HEALTHCHECKS_BACKUP_UUID
+    https://hc-ping.com/${HEALTHCHECKS_BACKUP_UUID}

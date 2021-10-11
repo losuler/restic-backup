@@ -18,4 +18,4 @@ ExecStart=/usr/bin/restic forget \
     --group-by paths
 ExecStart=/usr/bin/restic check
 ExecStartPost=/usr/bin/curl -m 10 --retry 5 \
-    https://hc-ping.com/$HEALTHCHECKS_FORGET_UUID
+    https://hc-ping.com/${HEALTHCHECKS_FORGET_UUID}
