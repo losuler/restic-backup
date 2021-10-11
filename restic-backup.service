@@ -20,7 +20,7 @@ ExecStart=/usr/bin/restic backup \
     /root \
     /usr/local \
     /var
-ExecStart=/usr/bin/bash -c "mysqldump \
+ExecStart=/bin/bash -c "/usr/bin/mysqldump \
     --single-transaction \
     -u $DB_USER \
     -p$DB_PASSWORD \
